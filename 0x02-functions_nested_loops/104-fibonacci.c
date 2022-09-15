@@ -9,18 +9,21 @@
 int main(void)
 
 {
-unsigned long n1 = 0, n2 = 1, n3;
-int inc;
-for (inc = 0; inc < 98; inc++)
+unsigned long int t0 = 0, t1 = 1, s;
+int i;
+for (i = 1; i <= 98; i++)
 {
-n3 = n1 + n2;
-printf("%lu", n3);
-n1 = n2;
-n2 = n3;
-if (inc == 97)
-printf("\n");
+s = t0 + t1;
+if (i != 98)
+{
+printf("%lu, ", s);
+}
 else
-printf(", ");
+{
+printf("%lu\n", s);
+}
+t0 = t1;
+t1 = s;
 }
 return (0);
 }
