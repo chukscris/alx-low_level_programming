@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -7,17 +6,41 @@
 */
 
 void print_number(int n)
-{
-	unsigned int num = n;
 
-	if (n < 0)
+{
+	long m; /* power of 10 */
+	int c; /* boolean check */
+	long num; /* convert int to long */
+
+	num = n;
+	/* negatives */
+	if (num < 0)
 	{
-		putchar('-');
-		num = -num;
+		num *= -1;
+		_putchar('-');
 	}
-	if (num > 9)
+	/* count up */
+	m = 1;
+	c = 1;
+	while (c)
 	{
-		print_number(num / 10);
+		if (num / (m * 10) > 0)
+			m *= 10;
+		else
+			c = 0;
 	}
-	putchar(num % 10 + '0');
+	/* count down */
+	while (num >= 0)
+	{
+		if (m == 1)
+		{
+			_putchar(num % 10 + '0');
+			num = -1;
+		}
+		else
+		{
+			_putchar((num / m % 10) + '0');
+			m /= 10;
+		}
+	}
 }
