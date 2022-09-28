@@ -8,11 +8,11 @@
 *Return: point to copied memory block
 */
 
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n1)
 {
-	unsigned int i;
+	unsigned int i = 0;
 
-	for (i= 0; n > 0; i++, n--)
+	for (; i < n; i++)
 	{
 		dest[i] = src[i];
 	}
