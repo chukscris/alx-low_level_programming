@@ -8,7 +8,7 @@
 *Return: point to copied memory block
 */
 
-char *_memcpy(char *dest, char *src, unsigned int n1)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i = 0;
 
