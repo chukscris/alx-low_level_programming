@@ -2,22 +2,18 @@
 #include "dog.h"
 
 /**
-* _copy - Make a copy of passed in argument
-* @src:  Data to make copy of
-* Return: Pointer
-*/
+ * _copy  -   Make a copy of passed in argument
+ * @src:      Data to make copy of
+ * Return:    Pointer
+ */
 
 char *_copy(char *src)
-
 {
-
 	char *ptr;
 	int i, len;
 
 	if (src == NULL)
-
 	{
-
 		return (NULL);
 	}
 
@@ -28,7 +24,6 @@ char *_copy(char *src)
 
 	if (ptr == NULL)
 	{
-
 		return (NULL);
 	}
 
@@ -38,7 +33,6 @@ char *_copy(char *src)
 	}
 
 	ptr[i] = '\0';
-
 	return (ptr);
 }
 
@@ -51,7 +45,6 @@ char *_copy(char *src)
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
-
 {
 	dog_t *snoopie;
 	char *new_name, *new_owner;
@@ -74,7 +67,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	(*snoopie).name = new_name;
+
 	(*snoopie).age = age;
+
 	new_owner = _copy(owner);
 	if (new_owner == NULL)
 	{
